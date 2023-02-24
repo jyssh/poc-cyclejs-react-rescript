@@ -1,4 +1,3 @@
-const { a } = require('@cycle/react-dom');
 const path = require('path');
 
 module.exports = {
