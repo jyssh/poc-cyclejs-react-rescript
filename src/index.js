@@ -1,6 +1,7 @@
-import { run } from '@cycle/run';
-import { makeDOMDriver } from '@cycle/react-dom';
+import xs from 'xstream';
 import { jsxFactory } from '@cycle/react-dom';
+import { run } from '@cycle/run';
+import { makeDOMDriver, div, h1, button } from '@cycle/react-dom';
 
 function main(sources) {
   const inc = Symbol();
@@ -10,12 +11,9 @@ function main(sources) {
 
   const vdom$ = count$.map(i =>
     <div>
-      <h1>Hello world</h1>
+      <h1>Counter : {i}</h1>
+      <button sel={inc}>Increment</button>
     </div>
-    // div([
-    //   h1(`Counter: ${i}`),
-    //   button(inc, 'Increment'),
-    // ]),
   );
 
   return {

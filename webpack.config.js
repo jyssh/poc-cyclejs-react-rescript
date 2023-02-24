@@ -9,23 +9,10 @@ module.exports = {
         publicPath: '/',
         clean: true,
     },
-    // target: 'web',
-    // devtool: 'eval',
     devServer: {
         historyApiFallback: true,
     },
     module: {
-        // rules: [
-        //     {
-        //         test: /\.(js|jsx)$/,
-        //         loader: 'babel-loader',
-        //         options: {
-        //             plugins: [
-        //                 ['transform-react-jsx', { pragma: 'jsxFactory.createElement' }],
-        //             ]
-        //         }
-        //     }
-        // ],
         rules: [
             {
                 test: /\.(js|jsx)$/,
