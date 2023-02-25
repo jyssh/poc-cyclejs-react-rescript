@@ -1,3 +1,5 @@
 build/
+lib/
 yarn-error.log
 stats.json
+*.bs.js
