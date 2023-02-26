@@ -1,4 +1,4 @@
-%%raw(`import xs from 'xstream';`)
+%%raw(`import xs from 'xstream'`)
 open CycleJs
 open CycleJs.React.Vdom
 open DomApi
@@ -14,4 +14,7 @@ let main = (sources: CycleJs.sourceStreams) => {
   {react: vdomS}
 }
 
-let _ = CycleJs.run(main, {react: CycleJs.React.makeDOMDriver(Document.v->Document.getElementById("app"))})
+let _ = CycleJs.run(
+  main,
+  {react: CycleJs.React.makeDOMDriver(Document.v->Document.getElementById("app"))},
+)
