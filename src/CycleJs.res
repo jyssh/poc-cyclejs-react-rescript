@@ -69,17 +69,22 @@ module React = {
     external button_: (AttrSet.t, string) => t = "button"
   }
 
-  type reactEvent
-
   type driver = Stream.t<Vdom.t> => Stream.t<Vdom.t>
 
   @module("@cycle/react-dom") external makeDOMDriver: Dom.element => driver = "makeDOMDriver"
+
+  type eventTarget = {value: string}
+  type mouseEvent = {target: eventTarget}
+  type reactEvent<'a> = {nativeEvent: 'a}
 
   // TODO: Turn string to polymorphic variant?
   @send external select: (Stream.t<Vdom.t>, string) => Stream.t<Vdom.t> = "select"
 
   // TODO: Turn string to polymorphic variant
-  @send external events: (Stream.t<Vdom.t>, string) => Stream.t<reactEvent> = "events"
+  // @send external events: (Stream.t<Vdom.t>, string) => Stream.t<reactEvent> = "events"
+  @send
+  external events_click: (Stream.t<Vdom.t>, @as("click") _) => Stream.t<reactEvent<mouseEvent>> =
+    "events"
 }
 
 type drivers = {react: React.driver}
