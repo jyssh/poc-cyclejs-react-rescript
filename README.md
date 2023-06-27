@@ -1,3 +1,5 @@
+NOTE: Abandoned in favour of react-rxjs / rxjs which allow one to employ FRP.
+
 # poc-cyclejs-react-rescript
 
 ## Goals
